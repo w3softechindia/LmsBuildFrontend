@@ -1,0 +1,49 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="db-main-content-area">
+    <div class="container-fluid">
+
+        <!-- My Profile -->
+        <div class="db-my-profile-content" *ngIf="employee">
+            <h1 style=" font-size: larger;margin-bottom: 20px;margin-left: 70px;"> My Profile</h1>
+            <ul>
+                <li>
+                    <span>Employe Id</span>
+                    : {{employee.employeeId}}
+                </li>
+                <li>
+                    <span>First Name</span>
+                    : {{employee.firstName}}
+                </li>
+                <li>
+                    <span>Last Name</span>
+                    : {{employee.lastName}}
+                </li>
+                <li>
+                    <span>Address</span>
+                    : {{employee.address}}
+                </li>
+                <li>
+                    <span>Web Mail</span>
+                    : {{employee.webMail}}
+                </li>
+
+                <li>
+                    <span>Employee Email</span>
+                    : {{employee.employeeEmail}}
+                </li>
+
+                <li>
+                    <span>Phone Number</span>
+                    : {{employee.phoneNumber}}
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+
+    </div>
+</div>

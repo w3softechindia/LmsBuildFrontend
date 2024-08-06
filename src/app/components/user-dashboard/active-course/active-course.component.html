@@ -1,0 +1,49 @@
+<!-- Navbar -->
+<nav class="db-navbar navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a routerLink="/user-dashboard" class="navbar-brand me-0">
+            <img src="/assets/images/w3-logo.png" alt="Image">
+        </a>
+        <h3>Employee Dashboard</h3>
+        <button class="navbar-toggler" type="button" (click)="sidebarSwitcherToggleClass()">
+            <span class="burger-menu">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+            </span>
+        </button>
+        <ul class="db-others-option d-flex mb-0 align-items-center">
+            <li class="db-dropdown">
+                <div class="db-option" [class.active]="switcherClassApplied">
+                    <button class="dropdown-toggle" type="button" (click)="switcherToggleClass()">
+                        <!-- <img src="assets/images/admin.jpg" alt="Image"> -->
+                        <!-- <span>User</span> -->
+                    </button>
+                    <div class="dropdown-menu">
+                        <!-- <a class="dropdown-item" routerLink="/user-settings">Settings</a> -->
+                        <a class="" routerLink="/learning-track">Exit</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- New -->
+
+<!-- Sidebar Menu -->
+<div class="db-left-sidebar-area" [class.active]="sidebarSwitcherClassApplied">
+    <ul>
+        <li><a routerLink="/learning-track" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i
+                    class="ri-dashboard-line"></i> My Learning</a></li>
+        <li><a routerLink="/Task-Track" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i
+                    class="ri-user-line"></i>Tasks</a></li>
+        <!-- <li><a routerLink="/" (click)="logout()"><i class="ri-logout-circle-r-line"></i> Logout</a></li> -->
+    </ul>
+    <button class="navbar-toggler" type="button" (click)="sidebarSwitcherToggleClass()">
+        <span class="burger-menu">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </span>
+    </button>
+</div>

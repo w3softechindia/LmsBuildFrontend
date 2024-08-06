@@ -1,0 +1,36 @@
+<app-active-course></app-active-course>
+<div class="db-main-content-area">
+  <div class="container-fluid">
+
+    <div class="course-timeline" style="cursor: pointer;">
+      <div *ngFor="let course of courses; let i = index" class="course-item">
+        <div class="course-header">
+          <div class="course-number">COURSE {{ i + 1 }}</div>
+          <div class="menu-icon">⋮</div>
+        </div>
+        <a style="cursor: pointer;" (click)="navigation(course.subCourseDuration)">
+          <div class="course-box">
+            <div class="course-body">
+              <div class="course-details">
+                <h3 class="size">{{ course.subCourseName }}</h3>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="course-info">
+          <p><i class="ri-time-line"></i> Duration: {{ course.subCourseDuration }} Days</p>
+          <div class="course-tags">
+            <span class="tag" *ngIf="course.progress">{{ course.progress }}</span>
+            <span class="tag update-available" *ngIf="course.updateAvailable">Update Available</span>
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" [style.width.%]="value">
+            <span class="progress-percentage">{{ value }}%</span>
+          </div>
+          <!-- <span class="progress-percentage">{{ value }}</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

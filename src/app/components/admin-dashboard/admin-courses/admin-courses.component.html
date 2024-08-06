@@ -1,0 +1,34 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="db-main-content-area">
+    <div class="container-fluid">
+        <h1 style="text-align: center;">Courses</h1>       
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-4" *ngFor="let course of courses">
+                    <div class="single-course-item">
+                        <a  class="courses-img" (click)="goToCourse(course.courseName)">
+                            <img style="cursor: pointer;" src="assets/images/courses/course-8.jpg" alt="Course Image">
+                            <!-- <span class="levels">Beginner</span> -->
+                            <!-- <span class="course-name-overlay">{{ course.courseName }}</span> -->
+                        </a>
+                        <div class="courses-content">
+                            <h3>
+                                <a  (click)="goToCourse(course.courseName)">{{ course.courseName }}</a>
+                            </h3>
+                                <ul class="status d-flex justify-content-between align-items-center">
+                                <li>
+                                    <i class="ri-time-line"></i>
+                                   <span class="course-duration">{{ course.courseDuration }}</span><label>days</label>
+                                </li>
+                            </ul>
+                        </div>
+                             
+                    </div>
+                </div>
+                <div *ngIf="courses.length === 0" class="no-courses">
+                    No Courses Available.....!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
